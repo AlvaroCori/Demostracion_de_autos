@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+  }
+body{
+    background-color: azure;
+}
+#specific-car-container{
+    display: flex;
+    flex: content;
+    border: blue 8px outset;
+    height: auto;
+    width: auto;
+}
+#image-car>img{
+    width: 700px;
+    height: 400px;
+}
+#description-car{
+    width: auto;
+    height: auto;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    font-style: initial;
+    text-align: justify;
+    border: rgb(175, 0, 0) 4px inset;
+}
+#car-feature{
+    width: auto;
+    height: auto;
+    border: black 4px inset;
+}
+
+#edit-car-frm{
+    width: 400px;
+    display:grid;
+    font-size: 20px;
+}
