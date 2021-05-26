@@ -1,18 +1,13 @@
-* {
-    box-sizing: border-box;
-  }
-body{
-    background-color: azure;
-}
+
 #teams-container
 {
-    background-color: rgb(206, 206, 206);
+    background-color: rgba(204, 204, 204,0.7);
     border: chartreuse;
     display: flex;
     flex-wrap: wrap;
     align-content: space-around;
     justify-content: space-evenly;
-    border: rgb(224, 224, 157) 2px solid;
+    border: rgb(255, 255, 63) 4px solid;
 }
 
 #teams-container div

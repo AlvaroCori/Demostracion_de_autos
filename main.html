@@ -7,10 +7,24 @@
     
     <script src="./scripts/main.js"></script>
     <link rel="stylesheet" href="./styles/styles-main.css">
+    <link rel="stylesheet" href="styles/general-style.css">
     <title>EQUIPOS</title>
 </head>
 <body>
+    <nav aria-label="principal navegador">
+        <ul id="menu-bar">
+          <li><a href="main.html" class="active">PRINCIPAL</a></li>
+          <li><a href="aggregatecar.html" class="active">AGREGAR</a></li>
+        </ul>
+    </nav>
     <h1>Automoviles</h1>
+    <div id="order-container">
+        <select name="OS">
+            <option value="1">MODELO</option> 
+            <option value="2">COMPAÑIA</option> 
+        </select>
+        <button id="button-order-container">ORDENAR</button>
+    </div>
     <div id="teams-container">   
     </div>
     <button id="refresh-btn">Fetch Teams</button>
@@ -18,5 +32,3 @@
 
 </body>
 </html>
-
-ionic cap sync

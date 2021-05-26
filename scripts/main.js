@@ -22,7 +22,7 @@ window.addEventListener('DOMContentLoaded',function(event){
         window.location="./aggregatecar.html";
     } 
 
-    async function fetchTeams()
+    async function fetchTeams(event)
     {
         const url = `${baseUrl}/carshow`;
         let response = await fetch(url);
@@ -30,6 +30,13 @@ window.addEventListener('DOMContentLoaded',function(event){
             if(response.status == 200){
                 debugger;
                 let data = await response.json();
+                data.sort((a, b) => {
+                    if(a.name <= b.name) return -1;
+                    if(a.name > b.name) return 1;
+                
+                    return 0;
+                })
+                console.log(document.getElementById('order-container').value)
                 let teamsLi = data.map( car => { return `<div>
                                                             <img src=${car.mainPhoto}>
                                                             <h2>${car.name}<h2> 
@@ -59,9 +66,9 @@ window.addEventListener('DOMContentLoaded',function(event){
             alert(errorText);
         }
     }
-
-
+    
     document.getElementById('refresh-btn').addEventListener('click', fetchTeams);
     document.getElementById('redirect').addEventListener('click',RedirectToAggregateCar);
+    document.getElementById('order-container').addEventListener('change',fetchTeams);
     fetchTeams();
 });

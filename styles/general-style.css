@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+  }
+body{
+    background-color: rgb(209, 209, 209); 
+    background-image: rgb(138, 138, 138); /*linear-gradient(rgb(255, 255, 255), rgb(208, 208, 208));*/
+}
+#menu-bar{
+    display: flex;
+    font-family: fantasy;
+    font-size: 42px;
+    margin: 20;
+    padding:20;
+    overflow: hidden;
+    background-image: linear-gradient(to bottom left, #525252, #bbbbbb, #434343);
+    list-style-type:none;
+    height: 100px;
+ }
+ #menu-bar li:hover, #menu-bar li:active {
+    color: #252440;
+    background-image: linear-gradient(to bottom left, #42c50e, #0095d0, #1200b6);
+    
+}
+#menu-bar li{
+    float: left;
+}
+#menu-bar>li>a{
+    display:inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}

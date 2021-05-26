@@ -1,9 +1,4 @@
-* {
-    box-sizing: border-box;
-  }
-body{
-    background-color: azure;
-}
+
 #specific-car-container{
     display: flex;
     flex: content;
