@@ -15,10 +15,13 @@ window.addEventListener('DOMContentLoaded',function(event){
             if(status == 200)
             {
                 document.forms['edit-car-frm'].name.value = car.name;
-                document.forms['edit-car-frm'].model.value = car.model;
+                document.forms['edit-car-frm'].typeCar.value = car.typeCar;
                 document.forms['edit-car-frm'].date.value = car.date.substring(0,10);
                 document.forms['edit-car-frm'].company.value = car.company;
                 document.forms['edit-car-frm'].velocity.value = parseInt(car.velocity);
+                document.forms['edit-car-frm'].transmission.value = car.transmission;
+                document.forms['edit-car-frm'].typeEnergy.value = car.typeEnegy;
+                document.forms['edit-car-frm'].country.value = car.country;
                 document.forms['edit-car-frm'].photo.value = car.mainPhoto;
                 document.forms['edit-car-frm'].description.value = car.description;
             } else {
@@ -32,10 +35,13 @@ window.addEventListener('DOMContentLoaded',function(event){
         let url = `${baseUrl}/carshow/${carId}`;
         var data = {
             name: event.currentTarget.name.value,
-            model: event.currentTarget.model.value,
+            typeCar: event.currentTarget.typeCar.value,
             date: event.currentTarget.date.value,
             company: event.currentTarget.company.value,
             velocity: parseInt(event.currentTarget.velocity.value),
+            transmission: event.currentTarget.transmission.value,
+            typeEnergy: event.currentTarget.typeEnergy.value,
+            country: event.currentTarget.country.value,
             mainPhoto: event.currentTarget.photo.value,
             description: event.currentTarget.description.value
         };

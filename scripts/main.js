@@ -1,6 +1,27 @@
 function redirectToCar(carId){
     window.location.href = `specificcar.html?carId=${carId}`;
 }
+var elements = 0
+var car1 = 0
+var car2 = 0
+function compareTwoCars(id){
+    if (elements==0)
+    {
+        car1=id;
+        elements =elements+1;
+    }
+    else{
+        if (elements==1 && car1!=id)
+        {
+            car2=id;
+            alert(`${car1} ${car2}`);
+            window.location.href = `comparecar.html?car1Id=${car1}&car2Id=${car2}`;
+            elements =0;
+            car1 = 0;
+            car2 = 0;
+        }
+    }
+}
 window.addEventListener('DOMContentLoaded',function(event){
     let teams = [];
     const baseUrl = 'http://localhost:3030/api';
@@ -21,6 +42,15 @@ window.addEventListener('DOMContentLoaded',function(event){
     function RedirectToAggregateCar(){
         window.location="./aggregatecar.html";
     } 
+    function filterValues(ages){
+        const unique = (value, index, self) => {
+            return self.indexOf(value) === index
+          }
+          const uniqueAges = ages.filter(unique)
+          
+          console.log(uniqueAges)
+          return uniqueAges
+    }
 
     async function fetchTeams(event)
     {
@@ -30,25 +60,48 @@ window.addEventListener('DOMContentLoaded',function(event){
             if(response.status == 200){
                 debugger;
                 let data = await response.json();
+                senseOfOrder = document.getElementById('order-type-sense').value;
+                typeOfOrder = document.getElementById('order-type').value;
+                descendent = senseOfOrder!="ascendent";
                 data.sort((a, b) => {
-                    if(a.name <= b.name) return -1;
-                    if(a.name > b.name) return 1;
-                
+                    if (descendent==false){
+                        if(a[typeOfOrder] <= b[typeOfOrder]) return -1;
+                        if(a[typeOfOrder] > b[typeOfOrder]) return 1;
+                    }
+                    if (descendent==true){
+                        if(a[typeOfOrder] >= b[typeOfOrder]) return -1;
+                        if(a[typeOfOrder] < b[typeOfOrder]) return 1;
+                    }
                     return 0;
                 })
-                console.log(document.getElementById('order-container').value)
+
+                /*uniqueCompanies = filterValues(data.map(car => car.company));
+                uniqueCountries = filterValues(data.map(car => car.country));*/
+                uniqueTypeCar = filterValues(data.map(car => car.typeCar));
+                
+                let typeCars = uniqueTypeCar.map(value => {return `<option value=${value}>${value}</option>`});
+                var typeCarsContent = `<select id="typeCars">${typeCars.join('')}</select>`;
+                document.getElementById('filter-container').innerHTML = typeCarsContent;
+/*
+<select name="order-list-sense" id="order-type-sense">
+            <option value="ascendent">ASCENDENTE</option> 
+            <option value="descendent">DESCENDENTE</option>  
+        </select>
+*/
                 let teamsLi = data.map( car => { return `<div>
                                                             <img src=${car.mainPhoto}>
-                                                            <h2>${car.name}<h2> 
+                                                            <h2>${car.name}</h2> 
                                                             <div class="text-container">   
-                                                                <p>Modelo: ${car.model}</p>
-                                                                <p>compania: ${car.company}</p>
-                                                                <p>velocidad maxima: ${car.velocity}</p>
-                                                                <p>fecha de creacion: ${car.date}</p>
+                                                                <p>Tipo: ${car.typeCar}</p>
+                                                                <p>Compania: ${car.company}</p>
+                                                                <p>Velocidad maxima: ${car.velocity}</p>
+                                                                <p>Pais: ${car.country}</p>
+                                                                <p>Fecha de creacion: ${car.date.split("T")[0]}</p>
                                                             </div>
                                                             <div class="button-container">
                                                                 <button type="button" onclick="redirectToCar(${car.id})">VER AUTO</button>
                                                                 <button type="button" data-delete-car-id="${car.id}">BORRAR</button>
+                                                                <input type="checkbox" onclick="compareTwoCars(${car.id})">
                                                             </div>
                                                          </div>`});
                 var teamContent = teamsLi.join('');

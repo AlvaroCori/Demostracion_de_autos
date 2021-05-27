@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Squada+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+#car-2-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-color: rgb(209, 209, 209); 
+    background-image: rgb(138, 138, 138); 
+}
+#car1{
+    background: linear-gradient(0.25turn, #ff0000,#ff7878);
+}
+#car2{
+    background: linear-gradient(0.25turn, #8280ff,#0400ff);
+}
+#car-2-container p, #car-2-container h1{
+    font-size: 50px;
+    text-align: center;
+    color: whitesmoke;
+}
+#car-2-container p:hover, #car-2-container h1:hover{
+    color: yellow;
+}
+#car-2-container p{
+    font-family: 'Squada One', cursive;
+}
+#car-2-container h1{
+    font-family: 'Anton', sans-serif;
+}
+img{
+    width: 500px;
+    height: 300px;
+    border: red 4px inset;
+}
+
+#car-feature{
+    background-color: rgba(38, 38, 38,0.6);
+    background-image: rgb(138, 138, 138);
+}
+div button{
+    align-self: center;
+    font-size: 200px;
+    align-content: center;
+}
+#redirect-to-main{
+    background-color: rgba(227, 237, 245,0.4);
+   align-self: start;
+    width: 120px;
+    height: 60px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+}

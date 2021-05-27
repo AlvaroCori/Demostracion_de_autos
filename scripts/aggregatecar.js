@@ -18,10 +18,13 @@ window.addEventListener('DOMContentLoaded',function(event){
         }
         var data = {
             name: event.currentTarget.name.value,
-            model: event.currentTarget.model.value,
+            typeCar: event.currentTarget.typeCar.value,
             date: event.currentTarget.date.value,
             company: event.currentTarget.company.value,
             velocity: parseInt(event.currentTarget.velocity.value),
+            transmission: event.currentTarget.transmission.value,
+            typeEnergy: event.currentTarget.typeEnergy.value,
+            country: event.currentTarget.country.value,
             mainPhoto: event.currentTarget.photo.value,
             description: event.currentTarget.description.value
         };

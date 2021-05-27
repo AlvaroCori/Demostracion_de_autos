@@ -1,0 +1,19 @@
+#create-car-frm{
+    align-content: center;
+    font-size: 30px;
+    background: rgba(170, 170, 170,0.8);
+
+}
+#create-car-frm>input{
+    border: blue 1px solid;
+}
+#create-car-frm>input,#create-car-frm>input{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+input[type="text"],input[type="number"],input[type="date"],textarea
+{
+    font-size:24px;
+}

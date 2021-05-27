@@ -2,13 +2,13 @@
 #specific-car-container{
     display: flex;
     flex: content;
-    border: blue 8px outset;
+    border: rgb(74, 74, 130) 8px outset;
     height: auto;
     width: auto;
 }
 #image-car>img{
-    width: 700px;
-    height: 400px;
+    width: 800px;
+    height: 500px;
 }
 #description-car{
     width: auto;
@@ -20,11 +20,24 @@
     border: rgb(175, 0, 0) 4px inset;
 }
 #car-feature{
+    font-size: 22px;
     width: auto;
     height: auto;
     border: black 4px inset;
+    background: linear-gradient(to bottom, #fffee4 0%, #fffbe0 100%);
 }
 
+#car-feature>h1{
+    background: linear-gradient(to bottom, #e6c300 0%, #f8da8c 100%);
+}
+#car-feature p{
+    font-size: 26px;
+    margin: 2px 2px 2px 4px;
+}
+#car-feature>p:hover{
+    font-size: 30px;
+    background: linear-gradient(to bottom, hsl(61, 100%, 73%) 0%, gold 100%);
+}
 #edit-car-frm{
     width: 400px;
     display:grid;

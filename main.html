@@ -11,19 +11,29 @@
     <title>EQUIPOS</title>
 </head>
 <body>
+    <img src="images/logo.jpg">
     <nav aria-label="principal navegador">
         <ul id="menu-bar">
           <li><a href="main.html" class="active">PRINCIPAL</a></li>
           <li><a href="aggregatecar.html" class="active">AGREGAR</a></li>
         </ul>
     </nav>
-    <h1>Automoviles</h1>
+    <h1>AUTOMOVILES</h1>
     <div id="order-container">
-        <select name="OS">
-            <option value="1">MODELO</option> 
-            <option value="2">COMPAÑIA</option> 
+        <select name="order-list" id="order-type">
+            <option value="name">NOMBRE</option> 
+            <option value="type">TIPO</option> 
+            <option value="company">COMPAÑIA</option> 
+            <option value="velocity">VELOCIDAD</option> 
+            <option value="country">PAIS</option> 
         </select>
-        <button id="button-order-container">ORDENAR</button>
+        <select name="order-list-sense" id="order-type-sense">
+            <option value="ascendent">ASCENDENTE</option> 
+            <option value="descendent">DESCENDENTE</option>  
+        </select>
+    </div>
+    <div id="filter-container">
+    </div>
     </div>
     <div id="teams-container">   
     </div>
