@@ -10,3 +10,9 @@
     display:grid;
     font-size: 20px;
 }
+
+#photo-edit>img{
+    width: 500px;
+    height: 300px;
+    border: red 2px inset;
+}

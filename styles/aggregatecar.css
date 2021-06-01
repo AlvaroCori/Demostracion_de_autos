@@ -17,3 +17,17 @@ input[type="text"],input[type="number"],input[type="date"],textarea
 {
     font-size:24px;
 }
+
+input[type="submit"]
+{
+    width: 200px;
+    height: 70px;
+    font-size: 60px;
+}
+
+#redirect-to-main{
+    width: 250px;
+    height: 70px;
+    font-size: 60px;
+    background-color: rgba(170, 170, 170,0.8);
+}

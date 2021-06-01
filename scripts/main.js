@@ -14,7 +14,6 @@ function compareTwoCars(id){
         if (elements==1 && car1!=id)
         {
             car2=id;
-            alert(`${car1} ${car2}`);
             window.location.href = `comparecar.html?car1Id=${car1}&car2Id=${car2}`;
             elements =0;
             car1 = 0;
@@ -23,10 +22,10 @@ function compareTwoCars(id){
     }
 }
 window.addEventListener('DOMContentLoaded',function(event){
-    let teams = [];
+    let cars = [];
     const baseUrl = 'http://localhost:3030/api';
 
-    function DeleteTeam(event){
+    function DeleteCar(event){
         ///debugger;
         let carId = this.dataset.deleteCarId;
         let url = `${baseUrl}/carshow/${carId}`;
@@ -52,7 +51,7 @@ window.addEventListener('DOMContentLoaded',function(event){
           return uniqueAges
     }
 
-    async function fetchTeams(event)
+    async function fetchCars(event)
     {
         const url = `${baseUrl}/carshow`;
         let response = await fetch(url);
@@ -82,13 +81,8 @@ window.addEventListener('DOMContentLoaded',function(event){
                 let typeCars = uniqueTypeCar.map(value => {return `<option value=${value}>${value}</option>`});
                 var typeCarsContent = `<select id="typeCars">${typeCars.join('')}</select>`;
                 document.getElementById('filter-container').innerHTML = typeCarsContent;
-/*
-<select name="order-list-sense" id="order-type-sense">
-            <option value="ascendent">ASCENDENTE</option> 
-            <option value="descendent">DESCENDENTE</option>  
-        </select>
-*/
-                let teamsLi = data.map( car => { return `<div>
+
+                let carsLi = data.map( car => { return `<div>
                                                             <img src=${car.mainPhoto}>
                                                             <h2>${car.name}</h2> 
                                                             <div class="text-container">   
@@ -104,11 +98,11 @@ window.addEventListener('DOMContentLoaded',function(event){
                                                                 <input type="checkbox" onclick="compareTwoCars(${car.id})">
                                                             </div>
                                                          </div>`});
-                var teamContent = teamsLi.join('');
-                document.getElementById('teams-container').innerHTML = teamContent;
-                let buttons = document.querySelectorAll('#teams-container div button[data-delete-car-id]');
+                var carContent = carsLi.join('');
+                document.getElementById('cars-container').innerHTML = carContent;
+                let buttons = document.querySelectorAll('#cars-container div button[data-delete-car-id]');
                 for (const button of buttons) {
-                    button.addEventListener('click', DeleteTeam);
+                    button.addEventListener('click', DeleteCar);
                 }
             } else {
                 var errorText = await response.text();
@@ -120,8 +114,8 @@ window.addEventListener('DOMContentLoaded',function(event){
         }
     }
     
-    document.getElementById('refresh-btn').addEventListener('click', fetchTeams);
+    document.getElementById('refresh-btn').addEventListener('click', fetchCars);
     document.getElementById('redirect').addEventListener('click',RedirectToAggregateCar);
-    document.getElementById('order-container').addEventListener('change',fetchTeams);
-    fetchTeams();
+    document.getElementById('order-container').addEventListener('change',fetchCars);
+    fetchCars();
 });

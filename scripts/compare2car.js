@@ -26,7 +26,7 @@ window.addEventListener('DOMContentLoaded',function(event){
                                         <h1>${car.name}</h1>
                                         <p>${car.typeCar}</p> 
                                         <p>${car.velocity}KM/H</p>
-                                        <p>${car.date}</p>
+                                        <p>${car.date.split("T")[0]}</p>
                                         <p>${car.transmission}</p>
                                         <p>${car.typeEnergy}</p>
                                         <p>${car.country}</p>

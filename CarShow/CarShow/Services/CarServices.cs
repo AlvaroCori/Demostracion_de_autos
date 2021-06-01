@@ -152,6 +152,63 @@ namespace CarShow.Services
                 Transmission = "-",
                 Description = "En cualquier condición y tipo de conducción, se asegura un mínimo de 55 Km de autonomía. En determinadas condiciones es posible alcanzar más de 65 Km de autonomía."
             });
+            
+                _cars.Add(new CarModel()
+                {
+                    Id = 11,
+                    Name = "WRX STI",
+                    Company = "Subaru",
+                    Date = new DateTime(1992, 1, 1),
+                    MainPhoto = "https://www.diariomotor.com/imagenes/picscache/1920x1600c/subaru-wrx-sti-2018-0917-009_1920x1600c.jpg",
+                    TypeCar = "Deportivo",
+                    Velocity = 255,
+                    Country = "Japon",
+                    TypeEnergy = "Gasolina",
+                    Transmission = "Automatica",
+                    Description = "El Subaru WRX STI es un coche deportivo de tamaño compacto, una berlina de 4 puertas potente, con una puesta a punto muy deportiva y una estética acorde. Este modelo ha estado tradicionalmente asociado a la gama del Subaru Impreza, que fue lanzado por Subaru en el año 1992.s"
+                }); 
+                _cars.Add(new CarModel()
+                {
+                    Id = 12,
+                    Name = "Avtoros Shaman 8x8",
+                    Company = "Avtoros",
+                    Date = new DateTime(2018, 5, 1),
+                    MainPhoto = "https://cdn.motor1.com/images/mgl/BbgOR/s1/avtoros-shaman-8x8.webp",
+                    TypeCar = "Todoterreno",
+                    Velocity = 71,
+                    Country = "Rusia",
+                    TypeEnergy = "Gasolina",
+                    Transmission = "Mecanica",
+                    Description = "Avtoros Shaman se presentó en Top Gear, mostrándonos su monstruosidad y grandes dimensiones, propias de un vehículo para enfrentarse a desastres naturales. Tanto es así que puede hacer que un Mercedes-AMG G 63 6x6 parezca un coche de juguete.Pero al margen de su monstruoso tamaño y del hecho de que tiene ocho ruedas casi tan altas como una persona de estatura media, lo realmente curioso del Shaman 8x8 es que puede,literalmente, navegar, tal y como podemos ver en el vídeo."
+                });
+                _cars.Add(new CarModel()
+                {
+                    Id = 13,
+                    Name = "Mazda MX-30",
+                    Company = "Mazda",
+                    Date = new DateTime(2020, 9, 17),
+                    MainPhoto = "https://i.blogs.es/5b593e/ma1/1366_2000.jpg",
+                    TypeCar = "Todoterreno",
+                    Velocity = 200,
+                    Country = "Japon",
+                    TypeEnergy = "Electrico",
+                    Transmission = "Automatica",
+                    Description = "El Mazda MX-30 es un crossover compacto 100% eléctrico fabricado por Mazda desde 2020. Es el primer coche eléctrico de producción de Mazda y es el primero en estrenar una plataforma dedicada para vehículos de cero emisiones. Con 4,39 metros de longitud, se posiciona como una alternativa al Mazda CX-30, con la peculiaridad de disponer de puertas traseras de apertura suicida y un aspecto más dinámico, más coupé, que otros crossover. Se fabrica en las instalaciones productivas de Mazda en Japón."
+                });
+                _cars.Add(new CarModel()
+                {
+                    Id = 14,
+                    Name = "Roadster",
+                    Company = "Tesla",
+                    Date = new DateTime(2021, 1, 1),
+                    MainPhoto = "https://soymotor.com/sites/default/files/styles/large/public/imagenes/noticia/tesla_roadster_2022.jpg",
+                    TypeCar = "Deportivo",
+                    Velocity = 400,
+                    Country = "EEUU",
+                    TypeEnergy = "Electrico",
+                    Transmission = "Automatica",
+                    Description = "El Tesla Roadster es un deportivo 100% eléctrico, que fabricará Tesla próximamente. La primera generación del Tesla Roadster se comercializó entre 2008-2012, si bien realmente se trataba de un Lotus Elise en el que el motor de combustión interna había sido sustituido por motores eléctricos y baterías. En 2017, Tesla presentó la segunda generación, que se espera que llegue a los concesionarios en 2021, y que contará con unas prestaciones difícil de creer: una velocidad máxima superior a 400 km/h y una aceleración de 0 a 100 km/h en sólo 2,1 segundos."
+                });
         }
         public CarModel CreateCar(CarModel newCar)
         {

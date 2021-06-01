@@ -5,7 +5,6 @@ window.addEventListener('DOMContentLoaded',function(event){
     const baseUrl = 'http://localhost:3030/api';
     var queryParams = window.location.search.split('?');
     var carId= queryParams[1].split('=')[1];
-    document.getElementById("carId").textContent= carId;
     function fetchCar(id)
     {
         const url = `${baseUrl}/carshow/${id}`;

@@ -2,7 +2,10 @@ window.addEventListener('DOMContentLoaded',function(event){
     const baseUrl = 'http://localhost:3030/api';
     var queryParams = window.location.search.split('?');
     var carId= queryParams[1].split('=')[1];
-    document.getElementById("carId").textContent= carId;
+    function loadPhoto(){
+        let carPhoto = `<img src="${event.currentTarget.photo.value}">`
+        document.getElementById('photo-edit').innerHTML = carPhoto;
+    }
     function loadEdit(id){
         const url = `${baseUrl}/carshow/${id}`;
         let status;
@@ -20,10 +23,12 @@ window.addEventListener('DOMContentLoaded',function(event){
                 document.forms['edit-car-frm'].company.value = car.company;
                 document.forms['edit-car-frm'].velocity.value = parseInt(car.velocity);
                 document.forms['edit-car-frm'].transmission.value = car.transmission;
-                document.forms['edit-car-frm'].typeEnergy.value = car.typeEnegy;
+                document.forms['edit-car-frm'].typeEnergy.value = car.typeEnergy;
                 document.forms['edit-car-frm'].country.value = car.country;
                 document.forms['edit-car-frm'].photo.value = car.mainPhoto;
                 document.forms['edit-car-frm'].description.value = car.description;
+                let carPhoto = `<img src="${car.mainPhoto}">`
+                document.getElementById('photo-edit').innerHTML = carPhoto;
             } else {
                 alert(car);
             }
@@ -61,7 +66,8 @@ window.addEventListener('DOMContentLoaded',function(event){
         });
 
     }
-
+    
+    document.getElementById('previewPhoto').addEventListener('click', loadPhoto);
     document.getElementById('edit-car-frm').addEventListener('submit', editElements);
     loadEdit(carId);
 });
